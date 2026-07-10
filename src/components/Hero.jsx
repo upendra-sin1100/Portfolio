@@ -56,7 +56,7 @@ const SOCIALS = [
 
 const downloadResume = () => {
   const link = document.createElement('a')
-  link.href = '/Upendra_Singh_Tomar_Resume.pdf'
+  link.href = '/certificates/Upendra_Singh_Tomar_Resume.pdf'
   link.download = 'Upendra_Singh_Tomar_Resume.pdf'
   link.click()
 }

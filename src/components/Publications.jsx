@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const PUBLICATIONS = [
@@ -25,19 +25,6 @@ const PUBLICATIONS = [
 ]
 
 export default function Publications() {
-  const [selectedPublication, setSelectedPublication] = useState(null)
-
-  useEffect(() => {
-    if (!selectedPublication) return undefined
-
-    const onKeyDown = (event) => {
-      if (event.key === 'Escape') setSelectedPublication(null)
-    }
-
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
-  }, [selectedPublication])
-
   return (
     <div id="publications" className="container-custom py-24 md:py-32">
       <div className="mb-14">
@@ -70,86 +57,27 @@ export default function Publications() {
                 <p className="text-white/40">{pub.details}</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <button
-                  type="button"
-                  onClick={() => setSelectedPublication({ ...pub, pdfHref, certificateHref })}
-                  className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
-                >
-                  Preview
-                </button>
                 <a
                   href={pdfHref}
-                  download={pub.pdf}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center justify-center rounded-lg bg-cyan-500/15 px-4 py-2 text-sm font-medium text-cyan-100 transition hover:bg-cyan-500/25 hover:text-white"
                 >
-                  Download paper
+                  Read Paper
                 </a>
                 <a
                   href={certificateHref}
-                  download={pub.certificate}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center justify-center rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/10 hover:text-white"
                 >
-                  Certificate
+                  View Certificate
                 </a>
               </div>
             </motion.article>
           )
         })}
       </div>
-
-      <AnimatePresence>
-        {selectedPublication ? (
-          <motion.div
-            role="dialog"
-            aria-modal="true"
-            aria-label={`${selectedPublication.title} preview`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 px-4 py-6 backdrop-blur-sm"
-            onClick={() => setSelectedPublication(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.97, y: 18 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.97, y: 18 }}
-              transition={{ duration: 0.22 }}
-              className="w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b12] shadow-2xl"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <div className="flex flex-col gap-3 border-b border-white/10 p-5 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/70">Publication preview</p>
-                  <h3 className="mt-1 text-xl font-bold text-white">{selectedPublication.title}</h3>
-                </div>
-                <div className="flex gap-3">
-                  <a
-                    href={selectedPublication.pdfHref}
-                    download={selectedPublication.pdf}
-                    className="inline-flex items-center justify-center rounded-lg bg-cyan-500/20 px-4 py-2 text-sm font-medium text-cyan-100 transition hover:bg-cyan-500/30"
-                  >
-                    Download PDF
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedPublication(null)}
-                    className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/75 transition hover:bg-white/10 hover:text-white"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-              <div className="h-[78vh] bg-black">
-                <iframe
-                  title={selectedPublication.title}
-                  src={selectedPublication.pdfHref}
-                  className="h-full w-full"
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </div>
   )
 }

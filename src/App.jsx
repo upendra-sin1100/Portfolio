@@ -204,10 +204,10 @@ const NAV_COMMANDS = [
 
 // Downloads the actual resume instead of re-opening LinkedIn (that was a
 // copy-paste duplicate of the "LinkedIn Profile" action below). Drop your
-// resume PDF in /public/Upendra_Singh_Tomar_Resume.pdf.
+// resume PDF in /public/certificates/Upendra_Singh_Tomar_Resume.pdf.
 const downloadResume = () => {
   const link = document.createElement('a')
-  link.href = '/Upendra_Singh_Tomar_Resume.pdf'
+  link.href = '/certificates/Upendra_Singh_Tomar_Resume.pdf'
   link.download = 'Upendra_Singh_Tomar_Resume.pdf'
   link.click()
 }
@@ -403,7 +403,7 @@ function Navbar({ onOpenCmd }) {
             {/* Was pointing at the LinkedIn URL — same target as the LinkedIn
                 action in the command palette. Now downloads the resume. */}
             <motion.a
-              href="/Upendra_Singh_Tomar_Resume.pdf"
+              href="/certificates/Upendra_Singh_Tomar_Resume.pdf"
               download="Upendra_Singh_Tomar_Resume.pdf"
               className="relative px-5 py-2 text-xs font-bold text-white rounded-full overflow-hidden"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)' }}
