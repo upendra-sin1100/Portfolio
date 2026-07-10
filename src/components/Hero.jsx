@@ -55,10 +55,7 @@ const SOCIALS = [
 ]
 
 const downloadResume = () => {
-  const link = document.createElement('a')
-  link.href = '/certificates/Upendra_Singh_Tomar_Resume.pdf'
-  link.download = 'Upendra_Singh_Tomar_Resume.pdf'
-  link.click()
+  window.open('/certificates/Upendra_Singh_Tomar_Resume.pdf', '_blank', 'noopener,noreferrer')
 }
 
 export default function Hero() {

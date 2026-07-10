@@ -202,18 +202,13 @@ const NAV_COMMANDS = [
   { icon: '✉️', label: 'Contact', href: '#contact' },
 ]
 
-// Downloads the actual resume instead of re-opening LinkedIn (that was a
-// copy-paste duplicate of the "LinkedIn Profile" action below). Drop your
-// resume PDF in /public/certificates/Upendra_Singh_Tomar_Resume.pdf.
-const downloadResume = () => {
-  const link = document.createElement('a')
-  link.href = '/certificates/Upendra_Singh_Tomar_Resume.pdf'
-  link.download = 'Upendra_Singh_Tomar_Resume.pdf'
-  link.click()
+// Opens the resume in a new tab so the viewer can decide whether to download it.
+const openResume = () => {
+  window.open('/certificates/Upendra_Singh_Tomar_Resume.pdf', '_blank', 'noopener,noreferrer')
 }
 
 const ACTION_COMMANDS = [
-  { icon: '📄', label: 'Download Resume', action: downloadResume },
+  { icon: '📄', label: 'Open Resume', action: openResume },
   { icon: '🔗', label: 'LinkedIn Profile', action: () => window.open('https://www.linkedin.com/in/upendra-singh-tomar-222a41312/', '_blank') },
 ]
 
@@ -401,10 +396,11 @@ function Navbar({ onOpenCmd }) {
             </motion.button>
 
             {/* Was pointing at the LinkedIn URL — same target as the LinkedIn
-                action in the command palette. Now downloads the resume. */}
+                action in the command palette. Now opens the resume in a new tab. */}
             <motion.a
               href="/certificates/Upendra_Singh_Tomar_Resume.pdf"
-              download="Upendra_Singh_Tomar_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="relative px-5 py-2 text-xs font-bold text-white rounded-full overflow-hidden"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)' }}
               whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(124,58,237,0.5)' }}
