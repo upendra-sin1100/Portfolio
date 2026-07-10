@@ -112,10 +112,6 @@ portfolio/
 - **LinkedIn:** [Upendra Singh Tomar](https://www.linkedin.com/in/upendra-singh-tomar-222a41312/)
 - **GitHub:** [upendra-sin1100](https://github.com/upendra-sin1100)
 
-## 📄 License
-
-Open source, MIT License.
-
 ---
 
 Crafted by Upendra Singh Tomar 🚀
