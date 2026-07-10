@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a0033 50%, #0f0f1e 100%);
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* Respect the OS-level "reduce motion" setting site-wide. Previously nothing
+   in the app checked for this, so orbs/particles/scroll animations always
+   ran regardless of the user's accessibility preference. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus — there was no focus style at all, so keyboard/
+   screen-reader users couldn't tell what was focused. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #d946ef;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d946ef, #06b6d4);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ec4899, #0ea5e9);
+}
+
+/* Selection Styles */
+::selection {
+  background: #d946ef;
+  color: #0f0f1e;
+}
+
+/* Text Utilities */
+.text-glow {
+  text-shadow: 0 0 10px #d946ef, 0 0 20px #d946ef;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px #06b6d4, 0 0 20px #06b6d4;
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 10px #ec4899, 0 0 20px #ec4899;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #d946ef, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(135deg, #06b6d4, #10b981, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Border Gradients */
+.border-gradient {
+  position: relative;
+  background: #1a1a2e;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#1a1a2e, #1a1a2e),
+    linear-gradient(135deg, #d946ef, #ec4899, #06b6d4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gradient-alt {
+  position: relative;
+  background: #1a1a2e;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#1a1a2e, #1a1a2e),
+    linear-gradient(135deg, #06b6d4, #10b981, #f97316);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Buttons */
+.btn-neon {
+  position: relative;
+  padding: 12px 24px;
+  font-weight: 600;
+  border: 2px solid #d946ef;
+  background: rgba(217, 70, 239, 0.1);
+  color: #d946ef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-neon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #d946ef;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-neon:hover {
+  color: #0f0f1e;
+  box-shadow: 0 0 20px #d946ef;
+}
+
+.btn-neon:hover::before {
+  left: 0;
+}
+
+.btn-neon-secondary {
+  position: relative;
+  padding: 12px 24px;
+  font-weight: 600;
+  border: 2px solid #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-neon-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #06b6d4;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-neon-secondary:hover {
+  color: #0f0f1e;
+  box-shadow: 0 0 20px #06b6d4;
+}
+
+.btn-neon-secondary:hover::before {
+  left: 0;
+}
+
+/* Container */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Horizontal Line with Glow */
+.divider-neon {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d946ef, #06b6d4, transparent);
+  box-shadow: 0 0 20px #d946ef;
+  margin: 40px 0;
+}
