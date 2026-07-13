@@ -108,7 +108,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 text-base sm:text-lg text-white/50 leading-relaxed max-w-xl"
           >
-            Data Science undergraduate at the Institute of Technology of Management, Gwalior,
+            Data Science undergraduate at the Institute of Technology and Management, Gwalior,
             building end-to-end ML applications — from a real-time patient triage dashboard to an
             unsupervised resume classifier — with two published research papers along the way.
           </motion.p>
