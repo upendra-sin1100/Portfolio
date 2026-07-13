@@ -95,7 +95,7 @@ export default function About() {
           className="md:col-span-3"
         >
           <p className="text-lg text-white/70 leading-relaxed">
-            I'm a Data Science undergraduate at the Institute of Technology of Management, Gwalior,
+            I'm a Data Science undergraduate at the Institute of Technology and Management, Gwalior,
             currently in my third year. I build machine learning applications end to end — from data
             pipeline to deployed interface — using Python, TensorFlow, Scikit-Learn, PostgreSQL, and
             React.js.
