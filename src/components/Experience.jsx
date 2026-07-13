@@ -5,7 +5,7 @@ const TIMELINE = [
   {
     period: 'Sep 2023 — May 2027',
     title: 'B.Tech in Data Science',
-    org: 'Institute of Technology of Management, Gwalior',
+    org: 'Institute of Technology and Management, Gwalior',
     tag: 'Education',
     description:
       "Currently in the 3rd year, 6th semester. Coursework spans programming, data structures & algorithms, machine learning, deep learning, and artificial intelligence — the foundation behind every project below.",
