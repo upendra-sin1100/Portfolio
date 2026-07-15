@@ -68,7 +68,7 @@ const SKILLS = [
 
 const STATS = [
   { value: '3', label: 'Full-stack ML projects shipped' },
-  { value: '78,670', label: 'Resumes classified in Resume Analyzer' },
+  { value: '1', label: 'Fine-tuned LLM pushed to Hugging Face' },
   { value: '2', label: 'Published research papers' },
 ]
 
