@@ -10,7 +10,7 @@ const CONTACT = [
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/upendra-sin1100' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/upendra-singh-tomar-222a41312/' },
-  { label: 'Resume', href: '/Upendra_Singh_Tomar_Resume.pdf' },
+  { label: 'Resume', href: '/certificates/Upendra%20Singh%20Tomar%20Resume.pdf' },
 ]
 
 export default function Footer() {
@@ -64,7 +64,7 @@ export default function Footer() {
               href={s.href}
               target={s.href.startsWith('http') ? '_blank' : undefined}
               rel="noreferrer"
-              download={s.href.startsWith('/') ? 'Upendra_Singh_Tomar_Resume.pdf' : undefined}
+              download={s.href.startsWith('/') ? 'Upendra Singh Tomar Resume.pdf' : undefined}
               className="hover:text-white/60 transition-colors font-medium"
             >
               {s.label}

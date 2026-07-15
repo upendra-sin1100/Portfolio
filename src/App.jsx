@@ -204,7 +204,7 @@ const NAV_COMMANDS = [
 
 // Opens the resume in a new tab so the viewer can decide whether to download it.
 const openResume = () => {
-  window.open('/certificates/Upendra_Singh_Tomar_Resume.pdf', '_blank', 'noopener,noreferrer')
+  window.open('/certificates/Upendra%20Singh%20Tomar%20Resume.pdf', '_blank', 'noopener,noreferrer')
 }
 
 const ACTION_COMMANDS = [
@@ -398,7 +398,7 @@ function Navbar({ onOpenCmd }) {
             {/* Was pointing at the LinkedIn URL — same target as the LinkedIn
                 action in the command palette. Now opens the resume in a new tab. */}
             <motion.a
-              href="/certificates/Upendra_Singh_Tomar_Resume.pdf"
+              href="/certificates/Upendra%20Singh%20Tomar%20Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="relative px-5 py-2 text-xs font-bold text-white rounded-full overflow-hidden"

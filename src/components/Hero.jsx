@@ -55,7 +55,7 @@ const SOCIALS = [
 ]
 
 const downloadResume = () => {
-  window.open('/certificates/Upendra_Singh_Tomar_Resume.pdf', '_blank', 'noopener,noreferrer')
+  window.open('/certificates/Upendra%20Singh%20Tomar%20Resume.pdf', '_blank', 'noopener,noreferrer')
 }
 
 export default function Hero() {

@@ -63,7 +63,8 @@ npm run preview
 ```
 portfolio/
 ├── public/
-│   └── Upendra_Singh_Tomar_Resume.pdf   # served for the résumé download buttons
+│   └── certificates/
+│       └── Upendra Singh Tomar Resume.pdf   # served for the résumé download buttons
 ├── src/
 │   ├── components/
 │   │   ├── Hero.jsx            # Hero section + typewriter + socials
