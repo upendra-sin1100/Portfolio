@@ -7,44 +7,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        neon: {
-          purple: '#d946ef',
-          pink: '#ec4899',
-          cyan: '#06b6d4',
-          green: '#10b981',
-          orange: '#f97316',
-          blue: '#0ea5e9',
+        void: '#0a0a0a',
+        'slate-deep': '#121212',
+        steel: '#8892A8',
+        ice: '#E4E8F0',
+        sapphire: {
+          DEFAULT: '#00F0FF', // Vibrant cyan/neon blue accent
+          hover: '#00D1DF',
+          light: '#70F8FF',
         },
-        dark: {
-          bg: '#0f0f1e',
-          card: '#1a1a2e',
-          border: '#2d2d44',
-        }
+        'amber-signal': '#F59E0B',
       },
-      animation: {
-        'float': 'float 3s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite',
-        'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
+      fontFamily: {
+        display: ['"Outfit"', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
+        mono: ['"Space Mono"', 'monospace'],
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%, 100%': { boxShadow: '0 0 5px #d946ef, 0 0 10px #d946ef' },
-          '50%': { boxShadow: '0 0 20px #d946ef, 0 0 30px #d946ef, 0 0 40px #d946ef' },
-        },
-        'pulse-neon': {
-          '0%, 100%': { opacity: '0.5' },
-          '50%': { opacity: '1' },
-        },
+      gridTemplateColumns: {
+        'bento': 'repeat(auto-fit, minmax(250px, 1fr))',
+        'bento-lg': 'repeat(3, 1fr)',
       },
-      boxShadow: {
-        'neon-purple': '0 0 20px #d946ef, 0 0 40px #d946ef',
-        'neon-cyan': '0 0 20px #06b6d4, 0 0 40px #06b6d4',
-        'neon-pink': '0 0 20px #ec4899, 0 0 40px #ec4899',
-      }
     },
   },
   plugins: [],
